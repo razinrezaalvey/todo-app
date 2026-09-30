@@ -36,6 +36,7 @@ def get_db():
         yield db
     finally:
         db.close()
+        
 
 db_dependency = Annotated[session,Depends(get_db)]
 user_dependency = Annotated[dict,Depends(get_current_user)]
